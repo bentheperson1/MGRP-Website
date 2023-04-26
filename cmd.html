@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MGRP Project Database</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <ul class="navbar">
+      <li class="navbar-item"><a class="" href="">Lab Reports</a></li>
+      <li class="navbar-item"><a class="active" href="">Command Prompt</a></li>
+      <li class="navbar-item"><a href="">News Articles</a></li>
+    </ul>
+  </body>
+  <body class="terminal-body">
+    <div id="terminal">
+      <p>Type 'help' to get started.</p>
+      <p class="hidden">
+        <span class="prompt" style="color:greenyellow">guest@mgrp -> </span>
+        <span contenteditable="true" class="input"> </span>
+      </p>
+    </div>
+    <script src="terminal.js"></script>
+    <script>
+      var commands = {};
+      
+      commands.help = function() {
+        var output = "<div>" +
+                     "<ul>" +
+                     "<li><strong>help</strong> - display this help.</li>" +
+                     "<li><strong>hello NAME</strong> - displays a greeting for NAME.</li>" +
+                     "</ul></div>";
+        return output;
+      };
+
+      commands.hello = function(args) {
+        if(args.length < 2) return "<p>Hello. Why don't you tell me your name?</p>";
+        return "Hello " + args[1];
+      };
+
+      Terminal.init(document.getElementById("terminal"), commands);
+    </script>
+  </body>
+</html>
