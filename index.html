@@ -3,12 +3,13 @@
   <head>
     <title>MGRP AI Database</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body class="terminal-body crt">
     <h1 class="title">MGRP Project Terminal</h1>
 
     <div id="terminal">
-      <p>Type 'help' to get started.</p>
+      <p>Type '<strong>help</strong>' to get started.</p>
       <p class="hidden">
         <span class="prompt" style="color:greenyellow">guest@mgrp -> </span>
         <span contenteditable="true" class="input"> </span>
@@ -23,15 +24,40 @@
                      "<ul>" +
                      "<li><strong>help</strong> - display this help.</li>" +
                      "<li><strong>hello NAME</strong> - displays a greeting for NAME.</li>" +
+                     "<li><strong>lab_reports</strong> - displays the findings of a lab researching the current influence of AI on education.</li>" +
                      "</ul></div>";
         return output;
       };
 
       commands.hello = function(args) {
         if(args.length < 2) return "<p>Hello. Why don't you tell me your name?</p>";
-        return "Hello " + args[1];
+        return "&#09;Hello " + args[1];
       };
 
+      commands.lab_reports = function(args) {
+        return `
+        
+        <div class="lab-report">
+       <p class="type clip step"><p class="center"> <br>------------------------------ BEGIN LAB REPORT ------------------------------</p> <br>
+
+       &emsp;&emsp;In our studies, it’s been found that Artificial Intelligence has the power for great good and great malice. <br><br>
+
+       &emsp;&emsp;Students have been observed to cheat on assignments by prompting the AI to answer their assignment, which they would then take the answer from and pass it off as their own. 
+       Evidently, however, “the chatbots - while sometimes convincing - also give wrong answers.” (Bonos) 
+       This is important because when a student prompts an AI for answers to a problem, especially one they don’t know the answer to and is given the wrong information as fact, they will then go on holding that misinformation as the truth, further hurting them in the long run. <br><br>
+
+       &emsp;&emsp;Even though “Some students use AI technologies to cheat on assignments, tests, and examinations” and that “AI can facilitate academic dishonesty and has the potential to significantly interfere with students' educational outcomes.” (Artificial) It’s been found that “AI systems can also help students get back on track faster by alerting teachers to problems the naked eye cannot see.” (Jimenez and Boser) This would tremendously help customize each student’s learning experience to suit their particular needs. <br><br>
+
+       &emsp;&emsp;Along with students being able to cheat on assignments with ease, “Evan Selinger, a philosopher,” is worried “that predictive texting reduces the power of writing as a form of mental activity and personal expression.” (Baron)  <br><br>
+
+       &emsp;&emsp;“But the temptation to lean on editing and text generation tools like Grammarly and ChatGPT makes it all too easy for people to substitute ready-made technology results for opportunities to think and learn.” (Baron) <br>
+
+       &emsp;&emsp;<p class="center">------------------------------- END LAB REPORT --------------------------------</p><br><br></p>
+        </div>
+        
+        `
+      }
+      
       Terminal.init(document.getElementById("terminal"), commands);
     </script>
   </body>
