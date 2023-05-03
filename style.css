@@ -17,6 +17,7 @@
 
 .lab-report {
     max-width: 40%;
+    margin-left: 4%;
 }
 
 .center {
@@ -42,21 +43,30 @@ body {
       b .7s infinite steps(1),   
       t calc(var(--n)*.03s) steps(var(--n)) forwards;
   }
-  @keyframes t{
+@keyframes t{
     from {background-size:0 200%}
-  }
-  @keyframes b{
+}
+@keyframes b{
     50% {background-position:0 -100%,0 0}
-  }
+}
+ 
+.annotated-bib {
+    line-height: 2;
+}
 
 #terminal {
     font-family: 'Raleway';
-    width:       100%; 
+    width:       99%; 
     height:      100%;
+
+    margin-left: 1%;
+
+    margin-bottom: 4%;
 }
 
 .title {
     font-family: 'Raleway';
+    text-align: center;
 }
 
 #terminal .input {
@@ -79,7 +89,7 @@ body {
     height: 100%;
     
     padding: 0;
-    margin:  0;
+    margin-left: 4%;
     
     box-sizing: border-box;        
 }
