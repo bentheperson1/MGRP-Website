@@ -24,6 +24,11 @@
     text-align: center;
 }
 
+.bib {
+    padding-left: 36px;
+    text-indent: -36px;
+}
+
 body {    
     margin: 0 !important;
     padding: 0 !important;
